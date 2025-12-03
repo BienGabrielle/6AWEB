@@ -15,11 +15,11 @@ export class Directives {
   monthNameDynamic: string = 'Mar';
   cityList: string[] = ['Angeles', 'San Fernando', 'Mabalacat', 'Mexico', 'Arayat'];
   hitList: any[] = [
-    {name: 'C Kirk', cause: 'Gunshot', isActive: false},
-    {name: 'G Floyd', cause: 'Cardiac Arrest', isActive: false},
-    {name: 'M King', cause: 'Gunshot', isActive: false},
-    {name: 'J Kennedy', cause: 'Gunshot', isActive: false},
-    {name: 'A Lincoln', cause: 'Gunshot', isActive: false},
+    {name: 'Pangilinan', cause: 'Gunshot', isActive: false},
+    {name: 'Delos Reyes', cause: 'Cardiac Arrest', isActive: false},
+    {name: 'Magbitang', cause: 'Gunshot', isActive: false},
+    {name: 'Salunga', cause: 'Gunshot', isActive: false},
+    {name: 'Villanueva', cause: 'Gunshot', isActive: false},
   ];
 
   showNote() {
