@@ -1,40 +1,73 @@
 <div class="min-h-screen px-6 py-10">
   <div class="max-w-4xl mx-auto bg-transparent rounded-xl p-6">
-    <h1 style="color:#fff;font-size:28px;margin-bottom:12px;">Collections — Tarnished Threads</h1>
+    <h1 class="text-white text-[28px] mb-3">Collections — Tarnished Threads</h1>
     <p class="muted">FromSoftware-inspired collections featuring apparel, collectibles, and accessories from your favorite games.</p>
 
-    <!-- Clothing Section -->
-    <h2 style="color:#fff;font-size:20px;margin-top:24px;margin-bottom:12px;">Clothing</h2>
-    <div class="space-y-4" style="margin-bottom:24px;">
+    <h2 class="text-white text-[20px] mt-6 mb-3">Clothing</h2>
+    <div class="space-y-4 mb-6">
       @for (s of services | filter: 'Clothing'; track s.name) {
-      <div style="padding:14px;background:#080808;border-radius:10px;border:1px solid rgba(255,255,255,0.03);">
-        <h3 style="color:#ff9900;margin:0 0 6px 0;">{{ s.name }}</h3>
-        <p class="muted" style="margin:0">{{ s.desc }}</p>
-        <p class="muted" style="margin-top:8px;font-size:13px;">Price: <strong style="color:#fff">{{ s.priceRange }}</strong></p>
+      <div class="p-4 bg-[#080808] rounded-lg border border-white/5 flex gap-4">
+        
+        <img 
+          [src]="s.image" 
+          alt="{{ s.name }}"
+          class="w-[110px] h-[110px] object-cover rounded-md"
+        />
+
+        <div>
+          <h3 class="text-[#ff9900] m-0 mb-1">{{ s.name }}</h3>
+          <p class="muted m-0">{{ s.desc }}</p>
+          <p class="muted text-sm mt-2">Price: 
+            <strong class="text-white">{{ s.priceRange }}</strong>
+          </p>
+        </div>
+
       </div>
       }
     </div>
 
-    <!-- Collectibles Section -->
-    <h2 style="color:#fff;font-size:20px;margin-top:24px;margin-bottom:12px;">Collectibles</h2>
-    <div class="space-y-4" style="margin-bottom:24px;">
+    <h2 class="text-white text-[20px] mt-6 mb-3">Collectibles</h2>
+    <div class="space-y-4 mb-6">
       @for (s of services | filter: 'Collectibles'; track s.name) {
-      <div style="padding:14px;background:#080808;border-radius:10px;border:1px solid rgba(255,255,255,0.03);">
-        <h3 style="color:#ff9900;margin:0 0 6px 0;">{{ s.name }}</h3>
-        <p class="muted" style="margin:0">{{ s.desc }}</p>
-        <p class="muted" style="margin-top:8px;font-size:13px;">Price: <strong style="color:#fff">{{ s.priceRange }}</strong></p>
+      <div class="p-4 bg-[#080808] rounded-lg border border-white/5 flex gap-4">
+
+        <img 
+          [src]="s.image" 
+          alt="{{ s.name }}"
+          class="w-[110px] h-[110px] object-cover rounded-md"
+        />
+
+        <div>
+          <h3 class="text-[#ff9900] m-0 mb-1">{{ s.name }}</h3>
+          <p class="muted m-0">{{ s.desc }}</p>
+          <p class="muted text-sm mt-2">Price:
+            <strong class="text-white">{{ s.priceRange }}</strong>
+          </p>
+        </div>
+
       </div>
       }
     </div>
 
-    <!-- Accessories Section -->
-    <h2 style="color:#fff;font-size:20px;margin-top:24px;margin-bottom:12px;">Accessories</h2>
+    <h2 class="text-white text-[20px] mt-6 mb-3">Accessories</h2>
     <div class="space-y-4">
       @for (s of services | filter: 'Accessories'; track s.name) {
-      <div style="padding:14px;background:#080808;border-radius:10px;border:1px solid rgba(255,255,255,0.03);">
-        <h3 style="color:#ff9900;margin:0 0 6px 0;">{{ s.name }}</h3>
-        <p class="muted" style="margin:0">{{ s.desc }}</p>
-        <p class="muted" style="margin-top:8px;font-size:13px;">Price: <strong style="color:#fff">{{ s.priceRange }}</strong></p>
+      <div class="p-4 bg-[#080808] rounded-lg border border-white/5 flex gap-4">
+
+        <img 
+          [src]="s.image" 
+          alt="{{ s.name }}"
+          class="w-[110px] h-[110px] object-cover rounded-md"
+        />
+
+        <div>
+          <h3 class="text-[#ff9900] m-0 mb-1">{{ s.name }}</h3>
+          <p class="muted m-0">{{ s.desc }}</p>
+          <p class="muted text-sm mt-2">Price:
+            <strong class="text-white">{{ s.priceRange }}</strong>
+          </p>
+        </div>
+
       </div>
       }
     </div>
