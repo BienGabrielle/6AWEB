@@ -1,0 +1,51 @@
+<div class="min-h-screen px-6 py-10">
+  <div class="max-w-5xl mx-auto bg-transparent rounded-xl p-6">
+    <h1 style="font-size:22px;color:#fff;margin-bottom:8px;font-weight:800;">Tarnished's Team — Store Staff Directory</h1>
+
+    <p class="muted" style="margin-bottom:12px;">Quick view of our in-store staff. Salaries highlighted for senior roles.</p>
+
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="border-b">
+          <th class="py-2">#</th>
+          <th class="py-2">Employee No.</th>
+          <th class="py-2">Full Name</th>
+          <th class="py-2">Gender</th>
+          <th class="py-2">Email</th>
+          <th class="py-2">Status</th>
+          <th class="py-2">Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (emp of employees; track $index) {
+        <tr class="hover:bg-gray-900 border-b">
+          <td class="py-2">{{ $index + 1 }}</td>
+          <td class="py-2">{{ emp.empNo }}</td>
+          <td class="py-2">{{ emp.fullName }}</td>
+          <td class="py-2">{{ emp.gender }}</td>
+            <td class="py-2"><a style="color:#00ffd5;text-decoration:none;" href="mailto:{{ emp.email }}">{{ emp.email }}</a></td>
+          <td class="py-2">
+            @if (emp.status == 'Active') {
+                <span style="color:#22c55e;font-weight:700">{{ emp.status }}</span>
+            } @else if (emp.status == 'On Leave') {
+                <span style="color:#f59e0b;font-weight:700">{{ emp.status }}</span>
+            } @else if (emp.status == 'Contract') {
+                <span style="color:#7c3aed;font-weight:700">{{ emp.status }}</span>
+            } @else {
+                <span style="color:#ef4444;font-weight:700">{{ emp.status }}</span>
+            }
+          </td>
+          <td class="py-2">
+            @if (isHighSalary(emp.salary)) {
+                <span style="color:#00ffd5;font-weight:800">{{ emp.salary | number }} Runes</span>
+            } @else {
+                <span class="muted">{{ emp.salary | number }} Runes</span>
+            }
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+
+  </div>
+</div>

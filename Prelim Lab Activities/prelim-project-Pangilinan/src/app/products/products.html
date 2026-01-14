@@ -1,0 +1,75 @@
+<div class="min-h-screen px-6 py-10">
+  <div class="max-w-4xl mx-auto bg-transparent rounded-xl p-6">
+    <h1 class="text-white text-[28px] mb-3">Collections — Tarnished Threads</h1>
+    <p class="muted">FromSoftware-inspired collections featuring apparel, collectibles, and accessories from your favorite games.</p>
+
+    <h2 class="text-white text-[20px] mt-6 mb-3">Clothing</h2>
+    <div class="space-y-4 mb-6">
+      @for (s of services | filter: 'Clothing'; track s.name) {
+      <div class="p-4 bg-[#080808] rounded-lg border border-white/5 flex gap-4">
+        
+        <img 
+          [src]="s.image" 
+          alt="{{ s.name }}"
+          class="w-[110px] h-[110px] object-cover rounded-md"
+        />
+
+        <div>
+          <h3 class="text-[#ff9900] m-0 mb-1">{{ s.name }}</h3>
+          <p class="muted m-0">{{ s.desc }}</p>
+          <p class="muted text-sm mt-2">Price: 
+            <strong class="text-white">{{ s.priceRange }}</strong>
+          </p>
+        </div>
+
+      </div>
+      }
+    </div>
+
+    <h2 class="text-white text-[20px] mt-6 mb-3">Collectibles</h2>
+    <div class="space-y-4 mb-6">
+      @for (s of services | filter: 'Collectibles'; track s.name) {
+      <div class="p-4 bg-[#080808] rounded-lg border border-white/5 flex gap-4">
+
+        <img 
+          [src]="s.image" 
+          alt="{{ s.name }}"
+          class="w-[110px] h-[110px] object-cover rounded-md"
+        />
+
+        <div>
+          <h3 class="text-[#ff9900] m-0 mb-1">{{ s.name }}</h3>
+          <p class="muted m-0">{{ s.desc }}</p>
+          <p class="muted text-sm mt-2">Price:
+            <strong class="text-white">{{ s.priceRange }}</strong>
+          </p>
+        </div>
+
+      </div>
+      }
+    </div>
+
+    <h2 class="text-white text-[20px] mt-6 mb-3">Accessories</h2>
+    <div class="space-y-4">
+      @for (s of services | filter: 'Accessories'; track s.name) {
+      <div class="p-4 bg-[#080808] rounded-lg border border-white/5 flex gap-4">
+
+        <img 
+          [src]="s.image" 
+          alt="{{ s.name }}"
+          class="w-[110px] h-[110px] object-cover rounded-md"
+        />
+
+        <div>
+          <h3 class="text-[#ff9900] m-0 mb-1">{{ s.name }}</h3>
+          <p class="muted m-0">{{ s.desc }}</p>
+          <p class="muted text-sm mt-2">Price:
+            <strong class="text-white">{{ s.priceRange }}</strong>
+          </p>
+        </div>
+
+      </div>
+      }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+.employees-card { border-radius: 12px; }
+
+table th { font-weight: 700; color: #cfeef0; text-transform: uppercase; font-size:12px; }
+
+table td a { color: #00ffd5; text-decoration: none; }
+
+.muted { color: rgba(230,238,240,0.7); }
+
