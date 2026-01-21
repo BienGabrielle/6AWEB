@@ -1,0 +1,33 @@
+<h2>EMPLOYEES LIST</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>FIRST NAME</th>
+    <th>LAST NAME</th>
+    <th>EMAIL</th>
+  </tr>
+  @for (employee of employees; track employee.id) {
+    <tr class="border-b">
+    <td class="py-2 px-4 text-center">{{ employee.id }}</td>
+    <td class="py-2 px-4 text-center">{{ employee.firstname }}</td>
+    <td class="py-2 px-4 text-center">{{ employee.lastname }}</td>
+    <td class="py-2 px-4 text-center">{{ employee.email }}</td>
+  </tr>
+  }
+</table>
+
+<h2 class="mt-8 mb-2 text-2xl font-bold">PRODUCT LIST</h2>
+<table class="min-w-full border border-gray-400 mb-8">
+  <tr class="bg-gray-200">
+    <th class="py-2 px-4 border">Product ID</th>
+    <th class="py-2 px-4 border">Product Name</th>
+    <th class="py-2 px-4 border">Description</th>
+    <th class="py-2 px-4 border">Price</th>
+  </tr>
+  <tr *ngFor="let product of products" class="border-b">
+    <td class="py-2 px-4 text-center border">{{ product.id }}</td>
+    <td class="py-2 px-4 text-center border">{{ product.name }}</td>
+    <td class="py-2 px-4 text-center border">{{ product.description }}</td>
+    <td class="py-2 px-4 text-center border">{{ product.price | number:'1.2-2' }}</td>
+  </tr>
+</table>
