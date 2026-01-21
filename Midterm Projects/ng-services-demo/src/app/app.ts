@@ -37,6 +37,8 @@ ngOnInit() {
   this.products = this._productService.getProducts();
 }
 
+
+
 }
 
 
