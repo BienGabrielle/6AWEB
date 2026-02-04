@@ -1,0 +1,21 @@
+.card.about-section {
+  padding: 40px 20px;
+  line-height: 1.6;
+}
+.card.about-section h2 {
+  color: #232a32;
+  border-bottom: 2px solid #d1d5db;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+.card.about-section p {
+  margin-bottom: 16px;
+  color: #4c566a;
+}
+.card.about-section .about-highlight {
+  background: #e5e9f0;
+  padding: 16px;
+  border-left: 4px solid #232a32;
+  border-radius: 6px;
+  margin: 20px 0;
+}

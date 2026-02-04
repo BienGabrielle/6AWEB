@@ -1,0 +1,28 @@
+.card.contact-form {
+  padding: 20px;
+}
+.card.contact-form h2 {
+  margin-bottom: 16px;
+  color: #232a32;
+}
+.card.contact-form input,
+.card.contact-form textarea {
+  background: #fff;
+  border: 1px solid #d1d5db;
+}
+.card.contact-form input:focus,
+.card.contact-form textarea:focus {
+  border-color: #3b4252;
+  box-shadow: 0 0 0 2px rgba(59,66,82,0.2);
+}
+.card.contact-form .contact-info {
+  margin-top: 24px;
+  padding: 16px;
+  background: #e5e9f0;
+  border-radius: 6px;
+  color: #4c566a;
+}
+.card.contact-form .contact-info i {
+  margin-right: 8px;
+  color: #232a32;
+}

@@ -1,0 +1,15 @@
+<div class="card contact-form">
+  <h1><span class="icon">🖂</span>Contact</h1>
+  <form #contactForm="ngForm">
+    <label>Name: <input name="name" [(ngModel)]="name" /></label><br>
+    <label>Email: <input name="email" [(ngModel)]="email" /></label><br>
+    <label>Message: <textarea name="message" [(ngModel)]="message"></textarea></label><br>
+    <button type="button" (click)="submitted=true">Submit</button>
+  </form>
+  <div *ngIf="submitted">
+    <h2>Form Preview</h2>
+    <p>Name: {{ name | uppercase }}</p>
+    <p>Email: {{ email }}</p>
+    <p>Message: {{ message | truncate:100 }}</p>
+  </div>
+</div>

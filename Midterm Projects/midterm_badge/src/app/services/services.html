@@ -1,0 +1,16 @@
+<div class="card services-grid">
+  <h1><span class="icon">🖿</span>Services</h1>
+  <input type="text" placeholder="Search by title or body..." (input)="search$.next($event.target.value)" />
+  <div *ngIf="filteredPosts$ | async as posts; else loading">
+    <div *ngIf="posts.length; else noResults">
+      <ul>
+        <li *ngFor="let post of posts">
+          <strong>{{ post.title | titlecase }}</strong><br>
+          <span>{{ post.body | truncate:80 }}</span>
+        </li>
+      </ul>
+    </div>
+    <ng-template #noResults>No results found.</ng-template>
+  </div>
+  <ng-template #loading>Loading...</ng-template>
+</div>

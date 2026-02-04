@@ -1,0 +1,12 @@
+<div class="card home-hero">
+  <h1><span class="icon">🏠︎</span>Home</h1>
+  <h2>Welcome!</h2>
+  <p>This portal pulls remote records and shares them across pages.</p>
+  <h3>Latest Updates</h3>
+  <ul>
+    <li *ngFor="let post of latestPosts$ | async">
+      <strong>{{ post.title | uppercase }}</strong><br>
+      <span>{{ post.body | truncate:60 }}</span>
+    </li>
+  </ul>
+</div>
