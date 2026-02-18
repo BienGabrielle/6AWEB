@@ -1,0 +1,73 @@
+<div class="page">
+  <form (ngSubmit)="onSubmit()" #myForm="ngForm" class="form-card">
+
+    <!-- Username -->
+    <input
+      type="text"
+      name="username"
+      [(ngModel)]="username"
+      placeholder="Username"
+      required
+    />
+
+    <!-- Email -->
+    <input
+      type="email"
+      name="email"
+      [(ngModel)]="email"
+      placeholder="Email"
+      required
+    />
+
+    <!-- Password -->
+    <input
+      type="password"
+      name="password"
+      [(ngModel)]="password"
+      placeholder="Password"
+      required
+      minlength="6"
+    />
+
+    <!-- Role -->
+    <select name="role" [(ngModel)]="role" required>
+      <option value="" disabled selected>Select Role</option>
+      <option value="admin">Admin</option>
+      <option value="user">User</option>
+      <option value="guest">Guest</option>
+    </select>
+
+    <!-- Gender -->
+    <select name="gender" [(ngModel)]="gender" required>
+      <option value="" disabled selected>Select Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+
+    <!-- Status -->
+    <select name="status" [(ngModel)]="status" required>
+      <option value="" disabled selected>Select Status</option>
+      <option value="permanent">Permanent</option>
+      <option value="probationary">Probationary</option>
+    </select>
+
+    <!-- Comments -->
+    <textarea
+      name="comments"
+      [(ngModel)]="comments"
+      placeholder="Comments"
+      rows="3"
+    ></textarea>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="myForm.invalid">
+      Submit
+    </button>
+
+  </form>
+  <div *ngIf="submittedData" class="output-card">
+    <h3>Submitted Data</h3>
+    <pre>{{ submittedData | json }}</pre>
+  </div>
+</div>

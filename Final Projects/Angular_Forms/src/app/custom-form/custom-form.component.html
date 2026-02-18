@@ -1,0 +1,62 @@
+<div class="page">
+  <form class="form-card" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input placeholder="Student Number" formControlName="studentNumber" />
+    @if (isInvalid('studentNumber')) {
+      <small class="error">Student Number: 8 digits required</small>
+    }
+
+    <input placeholder="Full Name" formControlName="name" />
+    @if (isInvalid('name')) {
+      <small class="error">Name: at least 3 characters</small>
+    }
+
+    <select formControlName="course">
+      <option value="" disabled>Select Course</option>
+      @for (c of courses; track c) {
+        <option [value]="c">{{ c }}</option>
+      }
+    </select>
+    @if (isInvalid('course')) {
+      <small class="error">Course is required</small>
+    }
+
+    <select formControlName="year">
+      <option value="" disabled>Select Year Level</option>
+      @for (y of years; track y) {
+        <option [value]="y">{{ y }}</option>
+      }
+    </select>
+    @if (isInvalid('year')) {
+      <small class="error">Year level is required</small>
+    }
+
+    <div class="radio-group">
+      <p class="label">Gender</p>
+      <label>
+        <input type="radio" name="gender" value="Male" formControlName="gender" />
+        Male
+      </label>
+      <label>
+        <input type="radio" name="gender" value="Female" formControlName="gender" />
+        Female
+      </label>
+      <label>
+        <input type="radio" name="gender" value="Other" formControlName="gender" />
+        Other
+      </label>
+      @if (isInvalid('gender')) {
+        <small class="error">Gender is required</small>
+      }
+    </div>
+
+    <textarea rows="3" placeholder="Remarks" formControlName="remarks"></textarea>
+
+    <button type="submit" [disabled]="form.invalid">
+      Submit
+    </button>
+  </form>
+  <div *ngIf="submittedData" class="output-card">
+    <h3>Submitted Data</h3>
+    <pre>{{ submittedData | json }}</pre>
+  </div>
+</div>
