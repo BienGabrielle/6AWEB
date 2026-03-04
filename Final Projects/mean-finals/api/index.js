@@ -1,4 +1,4 @@
-// This file is saved inside the 'api' folder.
+
 
 const express = require("express");
 const { MongoClient } = require("mongodb");
@@ -8,14 +8,14 @@ const multer = require("multer");
 
 const app = express();
 app.use(cors());
-app.use(express.json()); // Add this line to parse JSON bodies
+app.use(express.json()); 
 
 const CONNECTION_STRING ="mongodb://localhost:27017";
 
 const DATABASENAME = "MyDb";
 let database;
 
-// Middleware instantiation
+
 app.use((req, res, next) => {
   if (!database) {
     return res.status(503).json({ error: "Database not connected yet." });
@@ -28,9 +28,8 @@ console.log("Connecting to MongoDB...");
 
 async function start() {
   try {
-    // Create client with timeouts so you see errors quickly
     const client = new MongoClient(CONNECTION_STRING, {
-      serverSelectionTimeoutMS: 10000, // 10s
+      serverSelectionTimeoutMS: 10000, 
       connectTimeoutMS: 10000,
     });
 
