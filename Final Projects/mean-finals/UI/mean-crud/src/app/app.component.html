@@ -1,0 +1,26 @@
+<div class="app-container">
+  <h1>Books Application</h1>
+
+  <!-- Add Book Form -->
+  <input id="newBook" placeholder="Title">
+  <input id="newDesc" placeholder="Description">
+  <input id="newPrice" placeholder="Book Price" type="number">
+  <input id="newAuthor" placeholder="Author">
+  <input id="newDate" placeholder="Date">
+  <button (click)="addBook()">Add Book</button>
+
+  <!-- Book List -->
+  <div class="book-list">
+    <div *ngFor="let book of books; trackBy: trackByBookId" class="book-item">
+      <div class="book-details">
+        <b>{{ book.title }}</b> | <b>{{ book.desc }}</b> | <b>{{ book.price }}</b> | <b>{{ book.author }}</b> | <b>{{ book.date }}</b>
+      </div>
+      <div class="book-actions">
+        <button (click)="deleteBook(book.id)">Delete</button>
+      </div>
+    </div>
+    <p *ngIf="books.length === 0">No books available</p>
+  </div>
+</div>
+
+<router-outlet />
